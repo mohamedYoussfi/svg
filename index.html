@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SVG</title>
+    </head>
+    <body>
+        <h1>Voici mon logo</h1>
+        <ul>
+            <li>Item 1 :</li>
+            <li>Item 2 :</li>
+        </ul>
+        <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="logo">
+                <rect rx="10" ry="10" x="100" y="100" width="400" height="300" stroke="blue" fill="yellow" stroke-width="3"></rect>
+                <circle r="50" cx="100" cy="100" fill="green" stroke="black" stroke-width="2" fill-opacity="0.5"></circle>
+            </g>
+            <use xlink:href="#logo" x="400" y="300">
+                <animateTransform attributeName="transform" 
+                    type="scale" 
+                    dur="3s" 
+                    values="1;0.5;1;1.5;2;1" repeatCount="indefinite"></animateTransform>
+                <animateTransform attributeName="transform" type="rotate"  dur="3s"
+                    from="0,400,300" to="360,400,300" repeatCount="indefinite" additive="sum"></animateTransform>
+            </use>
+        </svg>
+    </body>
+</html>

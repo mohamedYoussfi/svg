@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblio>
+    <etudiant code="E1" nom="Hassan" prenom="Hassan" age="23">
+        <livre id="11" titre="XML" dateEmprunt="2012-11-11" rendu="Oui" prix="500"/>
+        <livre id="12" titre="Java" dateEmprunt="2012-11-11" rendu="Non" prix="400"/>
+        <livre id="12" titre="Java" dateEmprunt="2012-11-11" rendu="Non" prix="100"/>
+        <livre id="12" titre="Java" dateEmprunt="2012-11-11" rendu="Non" prix="400"/>
+    </etudiant>
+    <etudiant code="E2" nom="Ilham" prenom="Ilham" age="24">
+        <livre id="11" titre="XML" dateEmprunt="2012-11-23" rendu="Non" prix="60"/>
+        <livre id="33" titre="Oracle" dateEmprunt="2012-11-23" rendu="Oui" prix="30"/>
+    </etudiant>
+</biblio>

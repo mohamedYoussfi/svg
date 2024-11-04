@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xsd:element name="operateur">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="client" maxOccurs="unbounded" type="typeClient"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="typeClient">
+        <xsd:sequence>
+            <xsd:element name="abonnement" maxOccurs="unbounded" type="typeAb">
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="code" type="xsd:int" use="required"/>
+        <xsd:attribute name="nom" type="xsd:string" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="typeAb">
+        <xsd:sequence>
+            <xsd:element name="facture" maxOccurs="unbounded" type="typeFact"/>
+        </xsd:sequence>
+        <xsd:attribute name="numAb" type="xsd:int" use="required"/>
+        <xsd:attribute name="dateAb" type="xsd:date" use="required"/>
+        <xsd:attribute name="type" default="GSM">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="FIXE"/>
+                    <xsd:enumeration value="GSM"/>
+                    <xsd:enumeration value="INTERNET"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+    </xsd:complexType>
+    <xsd:complexType name="typeFact">
+        <xsd:attribute name="numFact" type="xsd:int" use="required"/>
+        <xsd:attribute name="datefact" type="xsd:date" use="required"/>
+        <xsd:attribute name="montant" type="xsd:float" use="required"/>
+        <xsd:attribute name="reglee" default="NON">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="OUI"/>
+                    <xsd:enumeration value="NON"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+    </xsd:complexType>
+</xsd:schema>
